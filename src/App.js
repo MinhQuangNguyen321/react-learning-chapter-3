@@ -9,7 +9,7 @@ import { render } from "@testing-library/react";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="app-container">
         Hello World;
         <MyComponent />
       </div>
