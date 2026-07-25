@@ -4,10 +4,27 @@ import logo from "./../logo.svg";
 
 class DisplayInfor extends React.Component {
   constructor(props) {
+    console.log(">>> call constructor: 1");
     super(props);
     this.state = {
       isShowListUser: true,
     };
+  }
+
+  componentDidMount() {
+    console.log(">>> call me component did mount");
+    setTimeout(() => {
+      document.title = "Welcome BIN";
+    }, 3000);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(">>> call me component did update", this.props, prevProps);
+    if (this.props.listUsers !== prevProps.listUsers) {
+      if (this.props.listUsers.length === 5) {
+        alert("you got 5 users");
+      }
+    }
   }
 
   handleShowHide() {
@@ -17,8 +34,9 @@ class DisplayInfor extends React.Component {
   }
 
   render() {
+    console.log(">>>call me render");
     const { listUsers } = this.props;
-    console.table(listUsers);
+    console.log(listUsers);
 
     return (
       <div className="display-infor-container">
