@@ -6,16 +6,24 @@ import MyComponent from "./components/MyComponent";
 import React from "react";
 import { render } from "@testing-library/react";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="app-container">
-        {/* Hello World; */}
-        <MyComponent />
-      </div>
-    );
-  }
-}
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <div className="app-container">
+//         {/* Hello World; */}
+//         <MyComponent />
+//       </div>
+//     );
+//   }
+// }
+
+const App = () => {
+  return (
+    <div className="app-container">
+      <MyComponent />
+    </div>
+  );
+};
 
 // const App = () => {
 //   const count = useSelector((state) => state.counter.count);
