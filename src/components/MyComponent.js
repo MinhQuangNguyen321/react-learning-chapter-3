@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddUserInfor from "./AddUserInfor";
 import DisplayInfor from "./DisplayInfor";
 
@@ -59,6 +59,15 @@ const MyComponent = (props) => {
     listUsersClone = listUsersClone.filter((item) => item.id !== userId);
     setListUsers(listUsersClone);
   };
+
+  console.log(">>>call me render");
+
+  useEffect(() => {
+    console.log(">>>call me useEffect");
+    if (listUsers.length === 0) {
+      alert("You deleted all users");
+    }
+  }, [listUsers]);
 
   return (
     <>
